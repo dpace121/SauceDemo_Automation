@@ -18,7 +18,8 @@ test('Add product to cart', async ({ page }) => {
 
     await expect(productsPage.productsTitle).toBeVisible();
 
-    await productsPage.addProductToCart('sauce-labs-backpack');
+    await productsPage.addProductToCart('Sauce Labs Backpack');
+    await productsPage.addProductToCart('Sauce Labs Bike Light');
 
     await productsPage.openCart();
 

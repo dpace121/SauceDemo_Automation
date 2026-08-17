@@ -13,9 +13,12 @@ export class ProductsPage {
     }
 
     async addProductToCart(productName: string) {
-        await this.page
-        .locator(`[data-test="add-to-cart-${productName}"]`)
-            .click();;
+        const product = this.page
+        .locator(`[data-test="inventory-item"]`)
+        .filter({ hasText: productName });
+
+        await product.getByRole('button', { name: 'Add to cart' }).click();
+
     }
 
     async openCart() {
